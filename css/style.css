@@ -180,62 +180,50 @@ a { color: inherit; text-decoration: none; }
 }
 .page-banner h1 { font-size: 38px; font-weight: 800; letter-spacing: -0.01em; }
 
-/* ---------- Home links: 각진 코너-노치 카드 (둥근 카드/육각형과 차별화) ---------- */
+/* ---------- Home links: 사진 위 + 화이트 카드 아래 (호버-오버레이 방식과 차별화) ---------- */
 .home-links { padding: 100px 24px; background: var(--bg); }
 .home-links-inner { max-width: var(--max); margin: 0 auto; }
-.home-link-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+.home-link-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
 .home-link-card {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 3;
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%);
+  transition: transform .2s ease;
+}
+.home-link-card:hover { transform: translateY(-6px); }
+.home-link-photo {
+  position: relative;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  transition: transform .2s ease, box-shadow .2s ease;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 14% 100%, 0 86%);
+  box-shadow: 0 14px 30px rgba(14,12,44,.16);
 }
-.home-link-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(14,12,44,.28); }
-.home-link-card > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
-.home-link-card:hover > img { transform: scale(1.08); }
-.home-link-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,12,44,.1) 45%, rgba(14,12,44,.86) 100%); }
-.home-link-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 28px; transition: opacity .2s ease; }
-.home-link-card:hover .home-link-caption { opacity: 0; }
-.home-link-caption .preview-eyebrow, .home-link-caption h3 { color: #fff; }
-.home-link-caption h3 { font-size: 26px; font-weight: 800; margin-top: 8px; }
-.home-link-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 28px;
-  background: rgba(184,18,28,.94);
-  opacity: 0;
-  transition: opacity .3s ease;
-}
-.home-link-card:hover .home-link-overlay { opacity: 1; }
-.home-link-overlay .preview-eyebrow { color: rgba(255,255,255,.85); }
-.home-link-overlay h3 { color: #fff; font-size: 24px; font-weight: 800; margin: 8px 0 12px; }
-.home-link-overlay p { font-size: 15px; color: rgba(255,255,255,.94); line-height: 1.65; margin-bottom: 16px; max-width: 320px; }
-.home-link-overlay .preview-link { color: #fff; border-bottom-color: #fff; }
-.preview-eyebrow { font-size: 14px; font-weight: 800; letter-spacing: 0.14em; color: var(--accent); }
-.preview-link {
+.home-link-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.home-link-card:hover .home-link-photo img { transform: scale(1.08); }
+.home-link-caption { padding: 24px 4px 0; }
+.home-link-caption .preview-eyebrow { display: block; margin-bottom: 6px; }
+.home-link-caption h3 { font-size: 21px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.home-link-caption p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 14px; min-height: 48px; }
+.home-link-arrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--navy);
-  width: fit-content;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 4px;
-  transition: color .15s;
+  justify-content: center;
+  width: 34px; height: 34px;
+  background: var(--accent);
+  color: #fff;
+  clip-path: polygon(0 0, 100% 0, 100% 76%, 76% 100%, 0 100%);
+  transition: background .15s, transform .15s;
 }
-.preview-link:hover { color: var(--accent-dark); }
+.home-link-card:hover .home-link-arrow { background: var(--accent-dark); transform: translateX(4px); }
+.home-link-arrow svg { width: 16px; height: 16px; }
+.preview-eyebrow { font-size: 13px; font-weight: 800; letter-spacing: 0.14em; color: var(--accent); }
 
-@media (max-width: 760px) {
+@media (max-width: 960px) {
+  .home-link-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
   .home-link-grid { grid-template-columns: 1fr; }
   .home-links { padding: 72px 20px; }
+  .home-link-caption p { min-height: 0; }
 }
 
 /* ---------- VISION band (메인 히어로 아래 비전 문구) ---------- */
