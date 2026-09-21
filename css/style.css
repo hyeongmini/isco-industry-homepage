@@ -187,9 +187,18 @@ a { color: inherit; text-decoration: none; }
 .home-link-card {
   position: relative;
   display: block;
+  --stagger: 0px;
   transition: transform .2s ease;
+  transform: translateY(var(--stagger));
 }
-.home-link-card:hover { transform: translateY(-6px); }
+.home-link-card:nth-child(odd) { --stagger: -18px; }
+.home-link-card:nth-child(even) { --stagger: 18px; }
+.home-link-card:hover { transform: translateY(calc(var(--stagger) - 6px)); }
+
+@media (max-width: 960px) {
+  .home-link-card:nth-child(odd) { --stagger: 0px; }
+  .home-link-card:nth-child(even) { --stagger: 0px; }
+}
 .home-link-photo {
   position: relative;
   aspect-ratio: 1 / 1;
