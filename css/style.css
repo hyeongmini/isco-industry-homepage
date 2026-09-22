@@ -387,6 +387,95 @@ a { color: inherit; text-decoration: none; }
 .product-card-text h3 { font-size: 23px; font-weight: 800; margin-bottom: 8px; }
 .product-card-text p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.86); }
 
+/* ---------- 아스팔트 포장의 구성: 항상-노출 스펙 카드 3단 (호버 필요없음, 덕화의 인터랙티브 단면도와 차별화) ---------- */
+.layer-steps { display: flex; align-items: stretch; gap: 0; }
+.layer-step {
+  flex: 1;
+  position: relative;
+  background: var(--card-bg);
+  padding: 32px 26px;
+  box-shadow: 0 10px 30px rgba(14,12,44,.08);
+}
+.layer-step:not(:last-child) { clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%); margin-right: -1px; }
+.layer-step:last-child { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 22px 50%); }
+.layer-step:first-child { clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%); }
+.layer-step-num { font-size: 38px; font-weight: 800; color: transparent; -webkit-text-stroke: 2px var(--accent); line-height: 1; margin-bottom: 14px; }
+.layer-step h4 { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.layer-step-spec {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: #fff;
+  background: var(--navy);
+  padding: 4px 12px;
+  margin-bottom: 14px;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
+}
+.layer-step p:last-child { font-size: 14px; line-height: 1.7; color: var(--ink-soft); }
+
+@media (max-width: 760px) {
+  .layer-steps { flex-direction: column; }
+  .layer-step, .layer-step:not(:last-child), .layer-step:last-child, .layer-step:first-child { clip-path: polygon(0 0, 100% 0, 100% 88%, 92% 100%, 0 100%); margin-right: 0; margin-bottom: 14px; }
+}
+
+/* ---------- 아스콘의 생산품목: 컬러 헤드밴드 스펙카드 5종 (덕화의 호버형 사진 타일과 차별화) ---------- */
+.spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.spec-card { background: var(--card-bg); box-shadow: 0 10px 26px rgba(14,12,44,.08); }
+.spec-card-head {
+  position: relative;
+  padding: 20px 22px 34px;
+  color: #fff;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 100% 100%, 0 88%);
+}
+.spec-card:nth-child(odd) .spec-card-head { background: var(--navy); }
+.spec-card:nth-child(even) .spec-card-head { background: var(--accent); }
+.spec-card-num { font-size: 13px; font-weight: 800; letter-spacing: .12em; opacity: .75; margin-bottom: 6px; }
+.spec-card-head h4 { font-size: 19px; font-weight: 800; }
+.spec-card-body { padding: 20px 22px 26px; }
+.spec-card-body em { display: block; font-style: normal; font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--accent-dark); margin-bottom: 10px; }
+.spec-card-body p { font-size: 14px; line-height: 1.7; color: var(--ink-soft); }
+
+@media (max-width: 960px) {
+  .spec-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .spec-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- 아스콘의 재료: 배합 공식 레이아웃 (장성/덕화의 방사형 다이어그램과 차별화) ---------- */
+.formula-row { display: flex; flex-wrap: wrap; align-items: stretch; justify-content: center; gap: 14px; }
+.formula-block {
+  flex: 1 1 180px;
+  max-width: 220px;
+  background: var(--card-bg);
+  padding: 26px 20px;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 50% 100%, 0 86%);
+  box-shadow: 0 10px 26px rgba(14,12,44,.08);
+}
+.formula-block h4 { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.formula-block p { font-size: 13px; line-height: 1.65; color: var(--ink-soft); }
+.formula-op { display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 800; color: var(--accent); flex: 0 0 auto; }
+.formula-result-group { display: flex; align-items: center; gap: 14px; flex: 1 1 300px; max-width: 320px; }
+.formula-result {
+  flex: 1 1 auto;
+  max-width: 260px;
+  background: var(--navy-deep);
+  color: #fff;
+  padding: 30px 22px;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 50% 100%, 0 86%);
+}
+.formula-result h4 { font-size: 19px; font-weight: 800; margin-bottom: 10px; }
+.formula-result p { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,.78); }
+
+@media (max-width: 760px) {
+  .formula-row { flex-direction: column; align-items: center; }
+  .formula-op { transform: rotate(90deg); padding: 4px 0; }
+  .formula-block, .formula-result, .formula-result-group { max-width: 320px; width: 100%; }
+}
+
 @media (max-width: 760px) {
   .product-grid { grid-template-columns: 1fr; }
 }
