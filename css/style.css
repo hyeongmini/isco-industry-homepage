@@ -499,34 +499,63 @@ a { color: inherit; text-decoration: none; }
   .product-grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- 복지제도: 2단 리스트 + 원형 아이콘 (카드 그리드 대신 목록형으로 차별화) ---------- */
-.welfare-list {
+/* ---------- 복지제도: 벤토 모자이크 그리드 (카드/리스트 반복을 벗어나 큰 피처타일+색블록으로 차별화) ---------- */
+.welfare-bento {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 56px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 150px 150px 150px;
+  grid-template-areas:
+    "a a b c"
+    "a a d d"
+    "e e f f";
+  gap: 16px;
 }
-.welfare-row {
+.welfare-tile {
+  position: relative;
+  padding: 26px 26px 22px;
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  justify-content: space-between;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 90% 100%, 0 100%);
+  overflow: hidden;
 }
-.welfare-row-icon {
-  flex: 0 0 52px;
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  color: #fff;
+.tile-feature { background: var(--navy); color: #fff; }
+.tile-navy { background: var(--navy); color: #fff; }
+.tile-red { background: var(--accent); color: #fff; }
+.tile-white { background: var(--card-bg); color: var(--ink); box-shadow: 0 8px 24px rgba(14,12,44,.07); }
+.welfare-tile-icon {
+  width: 44px; height: 44px;
+  flex-shrink: 0;
+  margin-bottom: 12px;
 }
-.welfare-row:nth-child(odd) .welfare-row-icon { background: var(--navy); }
-.welfare-row:nth-child(even) .welfare-row-icon { background: var(--accent); }
-.welfare-row-icon svg { width: 24px; height: 24px; }
-.welfare-row-body h3 { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
-.welfare-row-body p { font-size: 14px; line-height: 1.7; color: var(--ink-soft); }
+.tile-feature .welfare-tile-icon, .tile-navy .welfare-tile-icon, .tile-red .welfare-tile-icon { color: rgba(255,255,255,.9); }
+.tile-white .welfare-tile-icon { color: var(--accent); }
+.welfare-tile-icon svg { width: 100%; height: 100%; }
+.welfare-tile h3 { font-weight: 800; margin-bottom: 6px; }
+.tile-feature h3 { font-size: 22px; }
+.tile-navy h3, .tile-red h3, .tile-white h3 { font-size: 17px; }
+.welfare-tile p { font-size: 14px; line-height: 1.6; }
+.tile-feature p { font-size: 15px; color: rgba(255,255,255,.82); max-width: 320px; }
+.tile-navy p, .tile-red p { color: rgba(255,255,255,.82); }
+.tile-white p { color: var(--ink-soft); }
 
-@media (max-width: 640px) {
-  .welfare-list { grid-template-columns: 1fr; column-gap: 0; }
+@media (max-width: 860px) {
+  .welfare-bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "a a"
+      "b c"
+      "d d"
+      "e f";
+  }
+  .welfare-tile { min-height: 150px; }
+}
+@media (max-width: 560px) {
+  .welfare-bento {
+    grid-template-columns: 1fr;
+    grid-template-areas: "a" "b" "c" "d" "e" "f";
+  }
 }
 
 /* ---------- 오시는길 ---------- */
