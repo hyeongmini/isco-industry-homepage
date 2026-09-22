@@ -381,7 +381,7 @@ a { color: inherit; text-decoration: none; }
 }
 .value-row-body h3 { font-size: 23px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
 .value-quote { font-size: 16px; font-weight: 700; color: var(--accent-dark); margin-bottom: 12px; }
-.value-row-body p:last-child { font-size: 15px; line-height: 1.8; color: var(--ink-soft); max-width: 640px; }
+.value-row-body p:last-child { font-size: 17px; line-height: 1.8; color: var(--ink-soft); max-width: 640px; }
 
 @media (max-width: 760px) {
   .value-row { flex-direction: column; align-items: flex-start; gap: 16px; padding: 32px 4px; }
@@ -404,7 +404,7 @@ a { color: inherit; text-decoration: none; }
 .product-card-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,12,44,.05) 40%, rgba(14,12,44,.88) 100%); }
 .product-card-text { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 28px; color: #fff; }
 .product-card-text h3 { font-size: 23px; font-weight: 800; margin-bottom: 8px; }
-.product-card-text p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.86); }
+.product-card-text p { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.86); }
 
 /* ---------- 아스팔트 포장의 구성: 항상-노출 스펙 카드 3단 (호버 필요없음, 덕화의 인터랙티브 단면도와 차별화) ---------- */
 .layer-steps { display: flex; align-items: stretch; gap: 0; }
@@ -431,7 +431,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 14px;
   clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
 }
-.layer-step p:last-child { font-size: 14px; line-height: 1.7; color: var(--ink-soft); }
+.layer-step p:last-child { font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
 
 @media (max-width: 760px) {
   .layer-steps { flex-direction: column; }
@@ -453,7 +453,7 @@ a { color: inherit; text-decoration: none; }
 .spec-card-head h4 { font-size: 19px; font-weight: 800; }
 .spec-card-body { padding: 20px 22px 26px; }
 .spec-card-body em { display: block; font-style: normal; font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--accent-dark); margin-bottom: 10px; }
-.spec-card-body p { font-size: 14px; line-height: 1.7; color: var(--ink-soft); }
+.spec-card-body p { font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
 
 @media (max-width: 960px) {
   .spec-grid { grid-template-columns: repeat(2, 1fr); }
@@ -474,7 +474,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 10px 26px rgba(14,12,44,.08);
 }
 .formula-block h4 { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
-.formula-block p { font-size: 13px; line-height: 1.65; color: var(--ink-soft); }
+.formula-block p { font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
 .formula-op { display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 800; color: var(--accent); flex: 0 0 auto; }
 .formula-result-group { display: flex; align-items: center; gap: 14px; flex: 1 1 300px; max-width: 320px; }
 .formula-result {
@@ -487,7 +487,7 @@ a { color: inherit; text-decoration: none; }
   clip-path: polygon(0 0, 100% 0, 100% 86%, 50% 100%, 0 86%);
 }
 .formula-result h4 { font-size: 19px; font-weight: 800; margin-bottom: 10px; }
-.formula-result p { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,.78); }
+.formula-result p { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,.78); }
 
 @media (max-width: 760px) {
   .formula-row { flex-direction: column; align-items: center; }
@@ -503,7 +503,7 @@ a { color: inherit; text-decoration: none; }
 .welfare-bento {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 150px 150px 150px;
+  grid-template-rows: 168px 168px 168px;
   grid-template-areas:
     "a a b c"
     "a a d d"
@@ -534,8 +534,8 @@ a { color: inherit; text-decoration: none; }
 .welfare-tile h3 { font-weight: 800; margin-bottom: 6px; }
 .tile-feature h3 { font-size: 22px; }
 .tile-navy h3, .tile-red h3, .tile-white h3 { font-size: 17px; }
-.welfare-tile p { font-size: 14px; line-height: 1.6; }
-.tile-feature p { font-size: 15px; color: rgba(255,255,255,.82); max-width: 320px; }
+.welfare-tile p { font-size: 16px; line-height: 1.6; }
+.tile-feature p { font-size: 17px; color: rgba(255,255,255,.82); max-width: 320px; }
 .tile-navy p, .tile-red p { color: rgba(255,255,255,.82); }
 .tile-white p { color: var(--ink-soft); }
 
@@ -549,7 +549,7 @@ a { color: inherit; text-decoration: none; }
       "d d"
       "e f";
   }
-  .welfare-tile { min-height: 150px; }
+  .welfare-tile { min-height: 168px; }
 }
 @media (max-width: 560px) {
   .welfare-bento {
